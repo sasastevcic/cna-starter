@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { ComponentType, forwardRef } from 'react';
+import Link from 'next/link';
 import { ElementType, NativeProps } from './AbstractButton.data';
 
 const withNextLink = (Component: ComponentType) =>
@@ -9,7 +9,7 @@ const withNextLink = (Component: ComponentType) =>
 
 		if (isInnerLink) {
 			return (
-				<Link href={href}>
+				<Link href={href} passHref>
 					<Component ref={ref} {...props} />
 				</Link>
 			);

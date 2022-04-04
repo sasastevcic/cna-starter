@@ -10,7 +10,7 @@ const imageProps = {
 describe('Image', () => {
 	describe('Render', () => {
 		it('should render', () => {
-			const { getByTestId } = renderWithTheme(<Image {...imageProps} />);
+			const { getByTestId } = renderWithTheme(<Image src={imageProps.src} alt={imageProps.alt} />);
 
 			const element = getByTestId('Image');
 
@@ -18,7 +18,7 @@ describe('Image', () => {
 		});
 
 		it('should render correctly', () => {
-			const tree = renderer.create(<Image {...imageProps} />).toJSON();
+			const tree = renderer.create(<Image src={imageProps.src} alt={imageProps.alt} />).toJSON();
 
 			expect(tree).toMatchSnapshot();
 		});
@@ -26,7 +26,7 @@ describe('Image', () => {
 
 	describe('Attributes', () => {
 		it('should have correct alt text', () => {
-			const { getByTestId } = renderWithTheme(<Image {...imageProps} />);
+			const { getByTestId } = renderWithTheme(<Image src={imageProps.src} alt={imageProps.alt} />);
 
 			const element = getByTestId('ImageElement');
 
@@ -34,7 +34,7 @@ describe('Image', () => {
 		});
 
 		it('should have correct source', () => {
-			const { getByTestId } = renderWithTheme(<Image {...imageProps} />);
+			const { getByTestId } = renderWithTheme(<Image src={imageProps.src} alt={imageProps.alt} />);
 
 			const element = getByTestId('ImageElement');
 

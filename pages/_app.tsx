@@ -1,10 +1,10 @@
-import type { AppProps } from 'next/app';
-import { combineProviders } from '../utils/combineProviders';
-import { ThemeProvider } from 'styled-components';
-import { theme } from '../styles/config/theme';
 import { MotionConfig } from 'framer-motion';
+import type { AppProps } from 'next/app';
+import { ThemeProvider } from 'styled-components';
 import { transition } from '../styles/config/framer';
+import { theme } from '../styles/config/theme';
 import GlobalStyle from '../styles/GlobalStyles';
+import { combineProviders } from '../utils/combineProviders';
 
 const GlobalProviders = combineProviders([
 	[ThemeProvider, { theme }],

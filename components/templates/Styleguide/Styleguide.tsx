@@ -1,6 +1,7 @@
 import { ReactElement } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { Modal as ModalEnum } from '../../../constants/modal';
+import { Path } from '../../../constants/path';
 import { useModal } from '../../../hooks/useModal';
 import { theme } from '../../../styles/config/theme';
 import { FontWeight, TextAlign, TextTransform } from '../../../styles/config/variables';
@@ -16,7 +17,6 @@ import Flex from '../../layout/Flex';
 import Page from '../../layout/Page';
 import Modal from '../../molecules/Modal';
 import { StyledBlock, StyledColorPalette } from './Styleguide.styles';
-import { Path } from '../../../constants/path';
 
 const ColorPalette = (): ReactElement => {
 	const colors = Object.entries(theme.color).map(([name, color]) => (

@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Path } from '../../../constants/Path';
+import { Path } from '../../../constants/path';
 import Button from '../../atoms/Button';
 import Heading from '../../atoms/Heading';
 import Container from '../../layout/Container';

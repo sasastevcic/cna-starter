@@ -1,5 +1,6 @@
 import { size } from 'polished';
 import styled, { css, DefaultTheme, FlattenInterpolation, ThemeProps } from 'styled-components';
+import { typeStyle } from '../../../styles/config/typeStyles';
 import { FontWeight, TransitionDuration, TransitionEase } from '../../../styles/config/variables';
 import { hover } from '../../../styles/helpers/hover';
 import { AbstractButton } from '../../atoms/AbstractButton/AbstractButton';
@@ -52,6 +53,7 @@ const themes: { [key in ButtonTheme]: FlattenInterpolation<ThemeProps<DefaultThe
 };
 
 export const StyledButton = styled(AbstractButton)<StyledButtonProps>`
+	${typeStyle.normal};
 	font-weight: ${FontWeight.Bold};
 	display: inline-flex;
 	align-items: center;

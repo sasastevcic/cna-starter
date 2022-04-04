@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
-  #root {
+  #__next {
     ${size('100%')};
   }
 

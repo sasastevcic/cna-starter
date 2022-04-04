@@ -16,8 +16,7 @@ import Flex from '../../layout/Flex';
 import Page from '../../layout/Page';
 import Modal from '../../molecules/Modal';
 import { StyledBlock, StyledColorPalette } from './Styleguide.styles';
-import { Path } from '../../../constants/Path';
-import Logo from '../../atoms/Icon/svg/logo.svg';
+import { Path } from '../../../constants/path';
 
 const ColorPalette = (): ReactElement => {
 	const colors = Object.entries(theme.color).map(([name, color]) => (

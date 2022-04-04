@@ -1,1 +1,3 @@
-export { AbstractButton as default } from './AbstractButton';
+import AbstractButton from './AbstractButton';
+
+export default AbstractButton;

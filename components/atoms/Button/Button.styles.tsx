@@ -3,7 +3,7 @@ import styled, { css, DefaultTheme, FlattenInterpolation, ThemeProps } from 'sty
 import { typeStyle } from '../../../styles/config/typeStyles';
 import { FontWeight, TransitionDuration, TransitionEase } from '../../../styles/config/variables';
 import { hover } from '../../../styles/helpers/hover';
-import { AbstractButton } from '../../atoms/AbstractButton/AbstractButton';
+import AbstractButton from '../../atoms/AbstractButton';
 import { ButtonTheme, StyledButtonProps } from './Button.data';
 
 const SIZE = 4;

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader should render correctly 1`] = `
+<div
+  className="sc-bczRLJ dVNMRw"
+  data-testid="Loader"
+>
+  <svg
+    className="sc-gsnTZi Dpegn"
+    height={60}
+    width={60}
+  >
+    <circle
+      className="sc-dkzDqf sc-hKMtZM exNUlu gwUwEt"
+      cx={30}
+      cy={30}
+      r={18}
+    />
+    <circle
+      className="sc-dkzDqf sc-eCYdqJ exNUlu dcvWlS"
+      cx={30}
+      cy={30}
+      r={18}
+    />
+  </svg>
+</div>
+`;

@@ -2,20 +2,21 @@ import Link from 'next/link';
 import { ComponentType, forwardRef } from 'react';
 import { ElementType, NativeProps } from './AbstractButton.data';
 
-const withNextLink = (Component: ComponentType) => (props: NativeProps) => {
-	const { href } = props;
-	const isInnerLink = href && href.startsWith('/');
+const withNextLink = (Component: ComponentType) =>
+	forwardRef<ElementType, NativeProps>((props, ref) => {
+		const { href } = props;
+		const isInnerLink = href && href.startsWith('/');
 
-	if (isInnerLink) {
-		return (
-			<Link href={href}>
-				<Component {...props} />
-			</Link>
-		);
-	}
+		if (isInnerLink) {
+			return (
+				<Link href={href}>
+					<Component ref={ref} {...props} />
+				</Link>
+			);
+		}
 
-	return <Component {...props} />;
-};
+		return <Component ref={ref} {...props} />;
+	});
 
 const AbstractButton = forwardRef<ElementType, NativeProps>(({ children, ...props }, ref) => {
 	let Component: 'a' | 'button' = 'button';

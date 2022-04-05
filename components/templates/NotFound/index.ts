@@ -1,1 +1,1 @@
-export { NotFound as default } from './NotFound.lazy';
+export { NotFound as default } from './NotFound';

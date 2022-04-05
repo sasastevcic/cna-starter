@@ -1,21 +1,20 @@
 import { ReactElement } from 'react';
-import { FALLBACK_SOURCE, ImageProps } from './Image.data';
-import { StyledImage, StyledImageElement, StyledPicture } from './Image.styles';
+import NextImage from 'next/image';
+import { ImageProps, AspectRatioProps } from './Image.data';
+import { StyledImage } from './Image.styles';
 
-export const Image = ({
-	alt,
-	src,
-	aspectRatio,
-	fit,
-	source = FALLBACK_SOURCE,
-	...props
-}: ImageProps): ReactElement => (
-	<StyledImage data-testid="Image" $aspectRatio={aspectRatio} $hasFit={!!fit} {...props}>
-		<StyledPicture $fullView={!!aspectRatio || !!fit}>
-			{source.map(({ media, srcset }) => (
-				<source key={srcset} media={media} srcSet={srcset} />
-			))}
-			<StyledImageElement data-testid="ImageElement" src={src} alt={alt} $fit={fit} />
-		</StyledPicture>
-	</StyledImage>
-);
+export const Image = ({ aspectRatio, ...props }: ImageProps): ReactElement => {
+	const [aspectWidth, aspectHeight] = aspectRatio ?? [];
+
+	const aspectRatioProps: AspectRatioProps | false = !!aspectRatio && {
+		layout: 'fill',
+		width: aspectWidth,
+		height: aspectHeight,
+	};
+
+	return (
+		<StyledImage data-testid="Image" $aspectRatio={aspectRatio}>
+			<NextImage data-testid="ImageElement" quality={100} {...aspectRatioProps} {...props} />
+		</StyledImage>
+	);
+};

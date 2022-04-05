@@ -1,24 +1,14 @@
-import { ComponentPropsWithoutRef } from 'react';
+import { ImageProps as NextImageProps } from 'next/image';
 
 export type AspectRatio = [number, number];
-export type FitType = 'cover' | 'contain';
 
-type ImageSource = {
-	media: string;
-	srcset: string;
-};
+export type AspectRatioProps = Pick<NextImageProps, 'layout' | 'width' | 'height'>;
 
-export interface ImageProps extends ComponentPropsWithoutRef<'img'> {
-	alt: string;
-	src: string;
-	fit?: FitType;
-	source?: ReadonlyArray<ImageSource>;
+export interface ImageProps extends NextImageProps {
 	aspectRatio?: AspectRatio;
 }
 
 export interface StyledImageProps {
 	$aspectRatio?: AspectRatio;
-	$hasFit: boolean;
+	$hasFit?: boolean;
 }
-
-export const FALLBACK_SOURCE: ReadonlyArray<ImageSource> = [];

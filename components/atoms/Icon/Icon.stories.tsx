@@ -8,16 +8,18 @@ import { Icon } from './Icon';
 const Table = (): ReactElement => {
 	const tableHeadings = ['Name', 'Preview'];
 
-	const rows = Object.entries(Icon).map(([name, Svg]) => (
-		<StyledRow key={name}>
-			<StyledData>
-				<Paragraph>{name}</Paragraph>
-			</StyledData>
-			<StyledData>
-				<StyledIcon as={Svg} />
-			</StyledData>
-		</StyledRow>
-	));
+	const rows = Object.entries(Icon).map(([name, Svg]) => {
+		return (
+			<StyledRow key={name}>
+				<StyledData>
+					<Paragraph>{name}</Paragraph>
+				</StyledData>
+				<StyledData>
+					<StyledIcon as={Svg} />
+				</StyledData>
+			</StyledRow>
+		);
+	});
 
 	return <GenericTable headings={tableHeadings}>{rows}</GenericTable>;
 };

@@ -1,6 +1,4 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { media } from '../../../styles/config/mediaQuery';
-import { Breakpoints } from '../../../styles/config/variables';
 import ImageComponent from './index';
 
 export default {
@@ -14,37 +12,24 @@ export const Cover = Template.bind({});
 Cover.args = {
 	src: 'https://via.placeholder.com/150',
 	alt: 'Placeholder',
-	fit: 'cover',
+	objectFit: 'cover',
+	layout: 'fill',
 };
 
 export const Contain = Template.bind({});
 Contain.args = {
 	src: 'https://via.placeholder.com/150',
 	alt: 'Placeholder',
-	fit: 'contain',
+	objectFit: 'contain',
+	width: 240,
+	height: 160,
 };
 
 export const AspectRatio = Template.bind({});
 AspectRatio.args = {
 	src: 'https://via.placeholder.com/150',
 	alt: 'Placeholder',
-	fit: 'cover',
 	aspectRatio: [16, 9],
-};
-
-export const Responsive = Template.bind({});
-Responsive.args = {
-	src: 'https://via.placeholder.com/450',
-	alt: 'Placeholder',
-	fit: 'contain',
-	source: [
-		{
-			media: media.down(Breakpoints.Small),
-			srcset: 'https://via.placeholder.com/150',
-		},
-		{
-			media: media.down(Breakpoints.Large),
-			srcset: 'https://via.placeholder.com/300',
-		},
-	],
+	layout: 'fill',
+	objectFit: 'cover',
 };

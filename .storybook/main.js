@@ -1,4 +1,5 @@
-module.exports = {
+/** @type {import('@storybook/core-common').StorybookConfig} */
+const storybookConfig = {
 	stories: ['../components/**/*.stories.@(mdx|ts|tsx)', '../styles/**/*.stories.@(mdx|ts|tsx)'],
 	addons: [
 		'@storybook/addon-docs',
@@ -25,3 +26,5 @@ module.exports = {
 		return config;
 	},
 };
+
+module.exports = storybookConfig;

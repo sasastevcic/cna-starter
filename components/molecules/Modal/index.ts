@@ -1,1 +1,1 @@
-export { Modal as default } from './Modal.lazy';
+export { Modal as default } from './Modal.dynamic';

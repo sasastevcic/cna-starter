@@ -1,4 +1,26 @@
 import { keyframes as sKeyframes } from 'styled-components';
+import { OUTLINE_SIZE } from '../../components/atoms/Loader/Loader.config';
+
+const rotate = sKeyframes`
+  100% {
+    transform: rotate(360deg);
+  }
+`;
+
+const dash = sKeyframes`
+  0% {
+    stroke-dasharray: 0, ${OUTLINE_SIZE};
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: ${OUTLINE_SIZE / 2} ${OUTLINE_SIZE / 2};
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: 0, ${OUTLINE_SIZE};
+    stroke-dashoffset: -${OUTLINE_SIZE};
+  }
+`;
 
 const wiggle = sKeyframes`
 	0% { transform: rotate(1.5deg); }
@@ -15,5 +37,7 @@ const wiggle = sKeyframes`
 `;
 
 export const keyframes = {
+	rotate,
+	dash,
 	wiggle,
 };

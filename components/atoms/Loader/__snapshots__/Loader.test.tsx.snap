@@ -6,7 +6,7 @@ exports[`Loader should render correctly 1`] = `
   data-testid="Loader"
 >
   <svg
-    className="sc-gsnTZi fqHWrx"
+    className="sc-gsnTZi Dpegn"
     height={60}
     width={60}
   >
@@ -17,7 +17,7 @@ exports[`Loader should render correctly 1`] = `
       r={18}
     />
     <circle
-      className="sc-dkzDqf sc-eCYdqJ exNUlu xdSze"
+      className="sc-dkzDqf sc-eCYdqJ exNUlu dcvWlS"
       cx={30}
       cy={30}
       r={18}

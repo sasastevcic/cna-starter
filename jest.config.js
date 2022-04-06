@@ -3,8 +3,8 @@ const jestConfig = {
 	moduleNameMapper: {
 		// Handle image imports
 		// https://jestjs.io/docs/webpack#handling-static-assets
-		'^.+\\.(png|jpg|jpeg|gif|webp|avif|ico|bmp|svg)$/i': `<rootDir>/__mocks__/fileMock.js`,
-		'^.+\\.svg': '<rootDir>/__mocks__/svgrMock.ts',
+		'^.+\\.(png|jpg|jpeg|gif|webp|avif|ico|bmp)$/i': `<rootDir>/__mocks__/fileMock.js`,
+		'^.+\\.svg': '<rootDir>/__mocks__/svgrMock.js',
 	},
 	// Add more setup options before each test is run
 	setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],

@@ -11,7 +11,7 @@ export const Home = (): ReactElement => {
 		<Page>
 			<Container>
 				<Flex flexDirection="column" justifyContent="center" alignItems="center">
-					<Heading>Create React App - Starter</Heading>
+					<Heading>Create Next App - Starter</Heading>
 					<Button href={Path.Styleguide}>Styleguide</Button>
 				</Flex>
 			</Container>

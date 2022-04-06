@@ -1,8 +1,16 @@
 import type { NextPage } from 'next';
-import Home from '../components/templates/Home';
+import Head from 'next/head';
+import HomeTemplate from '../components/templates/Home';
 
-const HomePage: NextPage = () => {
-	return <Home />;
+const Home: NextPage = () => {
+	return (
+		<>
+			<Head>
+				<title>Create Next App | Home</title>
+			</Head>
+			<HomeTemplate />
+		</>
+	);
 };
 
-export default HomePage;
+export default Home;

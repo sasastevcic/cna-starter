@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import Head from 'next/head';
 import StyleguideTemplate from '../components/templates/Styleguide';
 
 export const getStaticProps = () => {
@@ -9,7 +10,14 @@ export const getStaticProps = () => {
 };
 
 const Styleguide: NextPage = () => {
-	return <StyleguideTemplate />;
+	return (
+		<>
+			<Head>
+				<title>Create Next App | Styleguide</title>
+			</Head>
+			<StyleguideTemplate />
+		</>
+	);
 };
 
 export default Styleguide;

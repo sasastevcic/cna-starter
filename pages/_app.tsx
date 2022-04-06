@@ -11,13 +11,13 @@ const GlobalProviders = combineProviders([
 	[MotionConfig, { transition }],
 ]);
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
 	return (
 		<GlobalProviders>
 			<GlobalStyle />
 			<Component {...pageProps} />
 		</GlobalProviders>
 	);
-}
+};
 
 export default MyApp;

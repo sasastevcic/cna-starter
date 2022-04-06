@@ -9,7 +9,8 @@
 		"lint": "next lint",
 		"test": "jest --watch",
 		"storybook": "start-storybook -p 6006 -s ./public",
-		"build-storybook": "build-storybook -s public"
+		"build-storybook": "build-storybook -s public",
+		"generate": "npx generate-react-cli component"
 	},
 	"dependencies": {
 		"@svgr/webpack": "^6.2.1",

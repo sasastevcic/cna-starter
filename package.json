@@ -10,7 +10,16 @@
 		"test": "jest --watch",
 		"storybook": "start-storybook -p 6006 -s ./public",
 		"build-storybook": "build-storybook -s public",
-		"generate": "npx generate-react-cli component"
+		"generate": "npx generate-react-cli component",
+		"types": "tsc --noEmit --noUnusedLocals",
+		"prepare": "husky install"
+	},
+	"lint-staged": {
+		"**/*.{js,jsx,ts,tsx}": [
+			"yarn prettier --write",
+			"yarn eslint --ext .js,.jsx,.ts,.tsx --cache",
+			"yarn test --watchAll=false --findRelatedTests --bail"
+		]
 	},
 	"dependencies": {
 		"@svgr/webpack": "^6.2.1",
@@ -58,6 +67,8 @@
 		"eslint-plugin-react": "^7.29.4",
 		"eslint-plugin-react-hooks": "^4.2.0",
 		"eslint-plugin-storybook": "^0.5.7",
+		"husky": "^7.0.0",
+		"lint-staged": "^12.3.5",
 		"jest": "^27.5.1",
 		"react-test-renderer": "^17.0.2",
 		"storybook-addon-styled-component-theme": "^2.0.0",

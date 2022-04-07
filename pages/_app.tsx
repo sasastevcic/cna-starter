@@ -5,6 +5,7 @@ import { transition } from '../styles/config/framer';
 import { theme } from '../styles/config/theme';
 import GlobalStyle from '../styles/GlobalStyles';
 import { combineProviders } from '../utils/combineProviders';
+import '../styles/font-face.css';
 
 const GlobalProviders = combineProviders([
 	[ThemeProvider, { theme }],

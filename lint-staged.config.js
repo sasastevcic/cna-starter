@@ -1,6 +1,6 @@
 module.exports = {
 	// Type check TypeScript files
-	// '**/*.(ts|tsx)': () => 'yarn types',
+	'**/*.(ts|tsx)': () => 'yarn types',
 
 	// Lint then format TypeScript and JavaScript files
 	'**/*.(ts|tsx|js|jsx)': (filenames) => [

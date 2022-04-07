@@ -43,6 +43,10 @@ Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests)
 for more information.
 
+### `yarn cypress`
+
+Launches the e2e tests.
+
 ### `yarn storybook`
 
 Launches the Storybook UI tool for building components and pages in isolation.\

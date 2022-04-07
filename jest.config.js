@@ -8,7 +8,12 @@ const jestConfig = {
 	},
 	// Add more setup options before each test is run
 	setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
-	testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/', '<rootDir>/templates/'],
+	testPathIgnorePatterns: [
+		'<rootDir>/node_modules/',
+		'<rootDir>/.next/',
+		'<rootDir>/templates/',
+		'<rootDir>/cypress/',
+	],
 	testEnvironment: 'jsdom',
 	transform: {
 		// Use babel-jest to transpile tests with the next/babel preset

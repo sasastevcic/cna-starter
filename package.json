@@ -14,13 +14,6 @@
 		"types": "tsc --noEmit --noUnusedLocals",
 		"prepare": "husky install"
 	},
-	"lint-staged": {
-		"**/*.{js,jsx,ts,tsx}": [
-			"yarn prettier --write",
-			"yarn eslint --ext .js,.jsx,.ts,.tsx --cache",
-			"yarn test --watchAll=false --findRelatedTests --bail"
-		]
-	},
 	"dependencies": {
 		"@svgr/webpack": "^6.2.1",
 		"axios": "^0.26.1",

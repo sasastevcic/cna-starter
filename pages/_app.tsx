@@ -1,6 +1,7 @@
 import { MotionConfig } from 'framer-motion';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
+import ErrorBoundary from '../components/templates/ErrorBoundary';
 import { transition } from '../styles/config/framer';
 import { theme } from '../styles/config/theme';
 import GlobalStyle from '../styles/GlobalStyles';
@@ -16,7 +17,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 	return (
 		<GlobalProviders>
 			<GlobalStyle />
-			<Component {...pageProps} />
+			<ErrorBoundary>
+				<Component {...pageProps} />
+			</ErrorBoundary>
 		</GlobalProviders>
 	);
 };

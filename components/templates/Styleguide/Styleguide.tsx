@@ -9,6 +9,7 @@ import { theme } from '../../../styles/config/theme';
 import { FontWeight, TextAlign, TextTransform } from '../../../styles/config/variables';
 import Button from '../../atoms/Button';
 import { ButtonTheme } from '../../atoms/Button/Button.data';
+import FormError from '../../atoms/FormError';
 import Heading from '../../atoms/Heading';
 import { HeadingType } from '../../atoms/Heading/Heading.data';
 import { Icon } from '../../atoms/Icon/Icon';
@@ -123,6 +124,7 @@ export const Styleguide = (): ReactElement => {
 							label="Password"
 						/>
 						<Button type="submit">Submit</Button>
+						<FormError />
 						{formData && <Paragraph>Submitted data: {formData}</Paragraph>}
 					</Form>
 				</StyledBlock>

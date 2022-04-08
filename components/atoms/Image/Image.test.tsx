@@ -14,7 +14,7 @@ describe('Image', () => {
 				<Image src={imageProps.src} alt={imageProps.alt} layout="fill" />,
 			);
 
-			const element = getByTestId('Image');
+			const element = getByTestId('NextImage');
 
 			expect(element).toBeInTheDocument();
 		});
@@ -34,7 +34,7 @@ describe('Image', () => {
 				<Image src={imageProps.src} alt={imageProps.alt} layout="fill" />,
 			);
 
-			const element = getByTestId('ImageElement');
+			const element = getByTestId('NextImage');
 
 			expect(element).toHaveAttribute('alt', imageProps.alt);
 		});

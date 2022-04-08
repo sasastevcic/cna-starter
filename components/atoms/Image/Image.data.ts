@@ -1,14 +1,10 @@
-import { ImageProps as NextImageProps } from 'next/image';
+import { ImageProps } from 'next/image';
+import { AspectRatio } from '../../../styles/helpers/aspectRatio';
 
-export type AspectRatio = [number, number];
-
-export type AspectRatioProps = Pick<NextImageProps, 'layout' | 'width' | 'height'>;
-
-export interface ImageProps extends NextImageProps {
+export interface AspectRatioImageProps extends ImageProps {
 	aspectRatio?: AspectRatio;
 }
 
-export interface StyledImageProps {
-	$aspectRatio?: AspectRatio;
-	$hasFit?: boolean;
+export interface StyledAspectRatioProps {
+	$aspectRatio: AspectRatio;
 }

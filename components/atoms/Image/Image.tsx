@@ -1,20 +1,25 @@
-import { ReactElement } from 'react';
+import { ComponentType, ReactElement } from 'react';
 import NextImage from 'next/image';
-import { ImageProps, AspectRatioProps } from './Image.data';
-import { StyledImage } from './Image.styles';
+import { ImageProps } from 'next/image';
+import { AspectRatioImageProps } from './Image.data';
+import { StyledAspectRatio } from './Image.styles';
 
-export const Image = ({ aspectRatio, ...props }: ImageProps): ReactElement => {
-	const [aspectWidth, aspectHeight] = aspectRatio ?? [];
+const withAspectRatio =
+	(Component: ComponentType<ImageProps>) =>
+	({ aspectRatio, ...props }: AspectRatioImageProps) => {
+		if (aspectRatio) {
+			return (
+				<StyledAspectRatio $aspectRatio={aspectRatio}>
+					<Component layout="fill" objectFit="cover" {...props} />
+				</StyledAspectRatio>
+			);
+		}
 
-	const aspectRatioProps: AspectRatioProps | false = !!aspectRatio && {
-		layout: 'fill',
-		width: aspectWidth,
-		height: aspectHeight,
+		return <Component {...props} />;
 	};
 
-	return (
-		<StyledImage data-testid="Image" $aspectRatio={aspectRatio}>
-			<NextImage data-testid="ImageElement" quality={100} {...aspectRatioProps} {...props} />
-		</StyledImage>
-	);
-};
+const Image = (props: AspectRatioImageProps): ReactElement => (
+	<NextImage data-testid="NextImage" quality={100} {...props} />
+);
+
+export default withAspectRatio(Image);

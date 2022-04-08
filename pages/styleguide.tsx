@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import StyleguideTemplate from '../components/templates/Styleguide';
 
@@ -11,7 +11,7 @@ const Styleguide: NextPage = () => (
 	</>
 );
 
-export const getStaticProps = () => ({
+export const getStaticProps: GetStaticProps = () => ({
 	props: {},
 	notFound: process.env.NODE_ENV === 'production',
 });

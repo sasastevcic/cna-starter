@@ -4,21 +4,18 @@ import { ThemeProvider } from 'styled-components';
 import ErrorBoundary from '../components/templates/ErrorBoundary';
 import { transition } from '../styles/config/framer';
 import { theme } from '../styles/config/theme';
-import GlobalStyle from '../styles/GlobalStyles';
 import { combineProviders } from '../utils/combineProviders';
 import '../styles/font-face.css';
 
 const GlobalProviders = combineProviders([
 	[ThemeProvider, { theme }],
 	[MotionConfig, { transition }],
+	[ErrorBoundary],
 ]);
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
 	<GlobalProviders>
-		<GlobalStyle />
-		<ErrorBoundary>
-			<Component {...pageProps} />
-		</ErrorBoundary>
+		<Component {...pageProps} />
 	</GlobalProviders>
 );
 

@@ -13,18 +13,16 @@ interface HomeProps {
 	};
 }
 
-const Home: NextPage<HomeProps> = ({ fallback }) => {
-	return (
-		<>
-			<Head>
-				<title>Create Next App | Home</title>
-			</Head>
-			<SWRConfig value={{ fallback }}>
-				<HomeTemplate />
-			</SWRConfig>
-		</>
-	);
-};
+const Home: NextPage<HomeProps> = ({ fallback }) => (
+	<>
+		<Head>
+			<title>Create Next App | Home</title>
+		</Head>
+		<SWRConfig value={{ fallback }}>
+			<HomeTemplate />
+		</SWRConfig>
+	</>
+);
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
 	const { data } = await axios.get<HelloData>(API);

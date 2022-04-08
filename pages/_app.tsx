@@ -13,15 +13,13 @@ const GlobalProviders = combineProviders([
 	[MotionConfig, { transition }],
 ]);
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
-	return (
-		<GlobalProviders>
-			<GlobalStyle />
-			<ErrorBoundary>
-				<Component {...pageProps} />
-			</ErrorBoundary>
-		</GlobalProviders>
-	);
-};
+const MyApp = ({ Component, pageProps }: AppProps) => (
+	<GlobalProviders>
+		<GlobalStyle />
+		<ErrorBoundary>
+			<Component {...pageProps} />
+		</ErrorBoundary>
+	</GlobalProviders>
+);
 
 export default MyApp;

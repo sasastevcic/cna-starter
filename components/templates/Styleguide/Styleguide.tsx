@@ -5,6 +5,7 @@ import { Modal as ModalEnum } from '../../../constants/modal';
 import { Path } from '../../../constants/path';
 import { useForm } from '../../../hooks/useForm';
 import { useModal } from '../../../hooks/useModal';
+import { LoginSchema } from '../../../models/schema';
 import { theme } from '../../../styles/config/theme';
 import { FontWeight, TextAlign, TextTransform } from '../../../styles/config/variables';
 import Button from '../../atoms/Button';
@@ -23,7 +24,7 @@ import Form from '../../molecules/Form';
 import Modal from '../../molecules/Modal';
 import { StyledBlock, StyledColorPalette } from './Styleguide.styles';
 
-const schema = z.object({
+const schema = z.object<LoginSchema>({
 	email: z.string().email('Please enter a valid email address.'),
 	password: z
 		.string()

@@ -4,6 +4,7 @@ import { z } from 'zod';
 import { Modal as ModalEnum } from '../../../constants/modal';
 import { Path } from '../../../constants/path';
 import { useForm } from '../../../hooks/useForm';
+import { useGlobalStore } from '../../../hooks/useGlobalStore';
 import { useModal } from '../../../hooks/useModal';
 import { LoginSchema } from '../../../models/schema';
 import { theme } from '../../../styles/config/theme';
@@ -48,6 +49,7 @@ export const Styleguide = (): ReactElement => {
 		schema,
 	});
 	const { modal, openModal, closeModal } = useModal();
+	const { counter, increment, decrement } = useGlobalStore();
 
 	const handleSubmit = useCallback((data) => {
 		setFormData(JSON.stringify(data));
@@ -113,6 +115,14 @@ export const Styleguide = (): ReactElement => {
 							</Modal>
 						)}
 					</AnimatePresence>
+				</StyledBlock>
+				<Heading type={HeadingType.H2}>Global store:</Heading>
+				<StyledBlock>
+					<Heading type={HeadingType.H4}>{counter}</Heading>
+					<Flex>
+						<Button onClick={increment}>+</Button>
+						<Button onClick={decrement}>-</Button>
+					</Flex>
 				</StyledBlock>
 				<Heading type={HeadingType.H2}>Form:</Heading>
 				<StyledBlock>

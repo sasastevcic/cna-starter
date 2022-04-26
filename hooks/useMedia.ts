@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-
-const isBrowser = typeof window !== 'undefined';
+import { isBrowser } from '../utils/isBrowser';
 
 /**
  * @description a hook for using media queries

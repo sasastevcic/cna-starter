@@ -1,12 +1,17 @@
-import { ReactElement } from 'react';
+import { ReactElement, useCallback, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import { z } from 'zod';
 import { Modal as ModalEnum } from '../../../constants/modal';
 import { Path } from '../../../constants/path';
+import { useForm } from '../../../hooks/useForm';
+import { useGlobalStore } from '../../../hooks/useGlobalStore';
 import { useModal } from '../../../hooks/useModal';
+import { LoginSchema } from '../../../models/schema';
 import { theme } from '../../../styles/config/theme';
 import { FontWeight, TextAlign, TextTransform } from '../../../styles/config/variables';
 import Button from '../../atoms/Button';
 import { ButtonTheme } from '../../atoms/Button/Button.data';
+import FormError from '../../atoms/FormError';
 import Heading from '../../atoms/Heading';
 import { HeadingType } from '../../atoms/Heading/Heading.data';
 import { Icon } from '../../atoms/Icon/Icon';
@@ -15,8 +20,18 @@ import { ParagraphType } from '../../atoms/Paragraph/Paragraph.data';
 import Container from '../../layout/Container';
 import Flex from '../../layout/Flex';
 import Page from '../../layout/Page';
+import ControlledInput from '../../molecules/ControlledInput';
+import Form from '../../molecules/Form';
 import Modal from '../../molecules/Modal';
 import { StyledBlock, StyledColorPalette } from './Styleguide.styles';
+
+const schema = z.object<LoginSchema>({
+	email: z.string().email('Please enter a valid email address.'),
+	password: z
+		.string()
+		.min(6, 'Please choose a longer password')
+		.max(256, 'Consider using a short password'),
+});
 
 const ColorPalette = (): ReactElement => {
 	const colors = Object.entries(theme.color).map(([name, color]) => (
@@ -29,7 +44,16 @@ const ColorPalette = (): ReactElement => {
 };
 
 export const Styleguide = (): ReactElement => {
+	const [formData, setFormData] = useState<string>('');
+	const form = useForm({
+		schema,
+	});
 	const { modal, openModal, closeModal } = useModal();
+	const { counter, increment, decrement } = useGlobalStore();
+
+	const handleSubmit = useCallback((data) => {
+		setFormData(JSON.stringify(data));
+	}, []);
 
 	return (
 		<Page>
@@ -94,6 +118,29 @@ export const Styleguide = (): ReactElement => {
 							</Modal>
 						)}
 					</AnimatePresence>
+				</StyledBlock>
+				<Heading type={HeadingType.H2}>Global store:</Heading>
+				<StyledBlock>
+					<Heading type={HeadingType.H4}>{counter}</Heading>
+					<Flex>
+						<Button onClick={increment}>+</Button>
+						<Button onClick={decrement}>-</Button>
+					</Flex>
+				</StyledBlock>
+				<Heading type={HeadingType.H2}>Form:</Heading>
+				<StyledBlock>
+					<Form form={form} onSubmit={handleSubmit}>
+						<ControlledInput control={form.control} name="email" label="Email" />
+						<ControlledInput
+							control={form.control}
+							name="password"
+							type="password"
+							label="Password"
+						/>
+						<Button type="submit">Submit</Button>
+						<FormError />
+						{formData && <Paragraph>Submitted data: {formData}</Paragraph>}
+					</Form>
 				</StyledBlock>
 			</Container>
 		</Page>

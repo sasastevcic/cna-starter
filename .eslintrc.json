@@ -3,6 +3,7 @@
 		"next",
 		"prettier",
 		"eslint:recommended",
+		"plugin:jest-dom/recommended",
 		"plugin:@typescript-eslint/recommended",
 		"plugin:react/recommended",
 		"plugin:storybook/recommended"

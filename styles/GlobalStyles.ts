@@ -1,5 +1,6 @@
 import { size } from 'polished';
 import { createGlobalStyle } from 'styled-components';
+import { theme } from './config/theme';
 import { FontFamily, RemSize } from './config/variables';
 
 const BASE_FONT_SIZE = 16;
@@ -15,8 +16,8 @@ const GlobalStyle = createGlobalStyle`
     ${size('100vh', '100%')};
     text-rendering: optimizeSpeed;
     font-family: ${FontFamily.Lato};
-    background: ${({ theme }) => theme.color.white};
-    color: ${({ theme }) => theme.color.black};
+    background: ${theme.color.white};
+    color: ${theme.color.black};
     margin: 0;
     padding: 0;
   }

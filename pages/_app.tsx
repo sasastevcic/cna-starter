@@ -1,23 +1,25 @@
 import { MotionConfig } from 'framer-motion';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
-import { transition } from '../styles/config/framer';
+import ErrorBoundary from '../components/templates/ErrorBoundary';
+import { GlobalStoreProvider } from '../hooks/useGlobalStore';
+import { getTransition } from '../styles/config/framer';
 import { theme } from '../styles/config/theme';
-import GlobalStyle from '../styles/GlobalStyles';
 import { combineProviders } from '../utils/combineProviders';
+import '../styles/font-face.css';
 
 const GlobalProviders = combineProviders([
 	[ThemeProvider, { theme }],
-	[MotionConfig, { transition }],
+	[MotionConfig, { transition: getTransition() }],
+	[GlobalStoreProvider],
 ]);
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
-	return (
+const MyApp = ({ Component, pageProps }: AppProps) => (
+	<ErrorBoundary>
 		<GlobalProviders>
-			<GlobalStyle />
 			<Component {...pageProps} />
 		</GlobalProviders>
-	);
-};
+	</ErrorBoundary>
+);
 
 export default MyApp;

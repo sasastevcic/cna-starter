@@ -13,7 +13,7 @@ const storybookConfig = {
 		builder: '@storybook/builder-webpack5',
 	},
 	typescript: { reactDocgen: false },
-	webpackFinal: async (config, { configType }) => {
+	webpackFinal: async (config) => {
 		const rules = config.module.rules;
 		const fileLoaderRule = rules.find((rule) => rule.test.test('.svg'));
 		fileLoaderRule.exclude = /\.svg$/;

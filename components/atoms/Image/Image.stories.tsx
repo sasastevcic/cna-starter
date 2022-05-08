@@ -21,8 +21,7 @@ Contain.args = {
 	src: 'https://via.placeholder.com/150',
 	alt: 'Placeholder',
 	objectFit: 'contain',
-	width: 240,
-	height: 160,
+	layout: 'fill',
 };
 
 export const AspectRatio = Template.bind({});
@@ -30,6 +29,4 @@ AspectRatio.args = {
 	src: 'https://via.placeholder.com/150',
 	alt: 'Placeholder',
 	aspectRatio: [16, 9],
-	layout: 'fill',
-	objectFit: 'cover',
 };

@@ -1,11 +1,12 @@
 import { css, FlattenSimpleInterpolation } from 'styled-components';
 import { pseudo } from './pseudo';
 
-const calculateRatio = ([width, height]: readonly [number, number]): number =>
-	(height / width) * 100;
+export type AspectRatio = readonly [number, number];
+
+const calculateRatio = ([width, height]: AspectRatio): number => (height / width) * 100;
 
 export const aspectRatio = (
-	aspectRatio: readonly [number, number],
+	aspectRatio: AspectRatio,
 	position = 'relative',
 ): FlattenSimpleInterpolation => css`
 	position: relative;

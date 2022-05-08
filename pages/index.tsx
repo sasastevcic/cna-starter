@@ -1,17 +1,31 @@
-import type { NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
 import { SWRConfig } from 'swr';
 import axios from '../axios';
 import HomeTemplate from '../components/templates/Home';
-
-interface HomeProps {
-	fallback: Record<string, unknown>;
-}
+import { HelloData } from './api/hello';
 
 const API = '/hello';
 
-export const getServerSideProps = async () => {
-	const { data } = await axios.get(API);
+interface HomeProps {
+	fallback: {
+		[API]: HelloData;
+	};
+}
+
+const Home: NextPage<HomeProps> = ({ fallback }) => (
+	<>
+		<Head>
+			<title>Create Next App | Home</title>
+		</Head>
+		<SWRConfig value={{ fallback }}>
+			<HomeTemplate />
+		</SWRConfig>
+	</>
+);
+
+export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
+	const { data } = await axios.get<HelloData>(API);
 
 	return {
 		props: {
@@ -20,19 +34,6 @@ export const getServerSideProps = async () => {
 			},
 		},
 	};
-};
-
-const Home: NextPage<HomeProps> = ({ fallback }) => {
-	return (
-		<>
-			<Head>
-				<title>Create Next App | Home</title>
-			</Head>
-			<SWRConfig value={{ fallback }}>
-				<HomeTemplate />
-			</SWRConfig>
-		</>
-	);
 };
 
 export default Home;

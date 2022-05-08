@@ -74,7 +74,10 @@ export const Styleguide = (): ReactElement => {
 					<div style={{ background: 'black', padding: '2rem 5rem' }}>
 						<Flex alignItems="center">
 							<Button buttonTheme={ButtonTheme.Light}>Light</Button>
-							<Button buttonTheme={ButtonTheme.Light} icon={<Icon icon="logo" />}>
+							<Button
+								buttonTheme={ButtonTheme.Light}
+								icon={<Icon icon="logo" viewBox="0 0 841.9 595.3" />}
+							>
 								Light With Icon
 							</Button>
 							<Button buttonTheme={ButtonTheme.Light} icon={<Icon icon="logo" />} />

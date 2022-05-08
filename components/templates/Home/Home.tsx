@@ -22,6 +22,12 @@ export const Home = (): ReactElement => {
 					<Paragraph type={ParagraphType.Large}>
 						Current time: <strong>{hello?.time}</strong>
 						<Icon icon="close" />
+						<Icon icon="bell" />
+						<Icon icon="logo" viewBox="0 0 841.9 595.3" />
+						<Icon icon="mail" />
+						<Icon icon="cart" />
+						<Icon icon="clock" />
+						<Icon icon="stopwatch" />
 					</Paragraph>
 					<Button onClick={() => mutate()} style={{ marginBottom: '2rem' }}>
 						Revalidate Time

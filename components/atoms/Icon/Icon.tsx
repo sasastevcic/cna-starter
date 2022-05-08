@@ -1,7 +1,7 @@
-import Close from './svg/close.svg';
-import Logo from './svg/logo.svg';
-
-export const Icon = {
-	Close,
-	Logo,
+export const Icon = ({ icon }: { icon: string }) => {
+	return (
+		<svg height="24" width="24" viewBox="0 0 24 24">
+			<use href={`/sprite.svg#ico-${icon.toLocaleLowerCase()}`} />
+		</svg>
+	);
 };

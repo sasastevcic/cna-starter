@@ -11,6 +11,7 @@
 		"storybook": "start-storybook -p 6006 -s ./public",
 		"build-storybook": "build-storybook -s public",
 		"generate": "npx generate-react-cli component",
+		"icons": "sh ./components/atoms/Icon/scripts/generateSprite.sh",
 		"types": "tsc --noEmit --noUnusedLocals",
 		"prepare": "husky install"
 	},

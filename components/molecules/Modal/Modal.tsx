@@ -24,7 +24,7 @@ export const Modal = ({ onClose, children, ...props }: ModalProps): ReactElement
 				<StyledModal ref={modalRef} {...animate(variants.scaleIn)} {...props}>
 					<StyledCloseButton onClick={onClose}>
 						<ScreenReader text="Close" />
-						<Icon.Close />
+						<Icon icon="close" />
 					</StyledCloseButton>
 					{children}
 				</StyledModal>

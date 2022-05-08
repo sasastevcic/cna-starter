@@ -4,6 +4,7 @@ import { useSWR } from '../../../hooks/useSWR';
 import { HelloData } from '../../../pages/api/hello';
 import Button from '../../atoms/Button';
 import Heading from '../../atoms/Heading';
+import { Icon } from '../../atoms/Icon/Icon';
 import Paragraph from '../../atoms/Paragraph';
 import { ParagraphType } from '../../atoms/Paragraph/Paragraph.data';
 import Container from '../../layout/Container';
@@ -20,6 +21,7 @@ export const Home = (): ReactElement => {
 					<Heading style={{ marginBottom: '1rem' }}>{hello?.title}</Heading>
 					<Paragraph type={ParagraphType.Large}>
 						Current time: <strong>{hello?.time}</strong>
+						<Icon icon="close" />
 					</Paragraph>
 					<Button onClick={() => mutate()} style={{ marginBottom: '2rem' }}>
 						Revalidate Time

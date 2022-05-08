@@ -27,13 +27,13 @@ Dark.args = darkTheme;
 export const DarkWithIcon = Template.bind({});
 DarkWithIcon.args = {
 	...darkTheme,
-	icon: <Icon.Logo />,
+	icon: <Icon icon="logo" />,
 };
 
 export const DarkIcon = Template.bind({});
 DarkIcon.args = {
 	...darkTheme,
-	icon: <Icon.Logo />,
+	icon: <Icon icon="logo" />,
 	children: null,
 };
 
@@ -46,7 +46,7 @@ Light.parameters = {
 export const LightWithIcon = Template.bind({});
 LightWithIcon.args = {
 	...lightTheme,
-	icon: <Icon.Logo />,
+	icon: <Icon icon="logo" />,
 };
 LightWithIcon.parameters = {
 	backgrounds: { default: 'dark' },
@@ -55,7 +55,7 @@ LightWithIcon.parameters = {
 export const LightIcon = Template.bind({});
 LightIcon.args = {
 	...lightTheme,
-	icon: <Icon.Logo />,
+	icon: <Icon icon="logo" />,
 	children: null,
 };
 LightIcon.parameters = {

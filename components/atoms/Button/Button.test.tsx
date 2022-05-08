@@ -14,7 +14,7 @@ describe('Button', () => {
 		});
 
 		it('should render an icon', () => {
-			const { getByTestId } = renderWithTheme(<Button icon={<Icon.Logo />} />);
+			const { getByTestId } = renderWithTheme(<Button icon={<Icon icon="logo" />} />);
 
 			const element = getByTestId('Button');
 			const child = element.querySelector('svg');

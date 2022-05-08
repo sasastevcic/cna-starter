@@ -67,17 +67,17 @@ export const Styleguide = (): ReactElement => {
 					<div style={{ background: '#f2f2f2', padding: '2rem 5rem' }}>
 						<Flex alignItems="center">
 							<Button>Default</Button>
-							<Button icon={<Icon.Logo />}>Default With Icon</Button>
-							<Button icon={<Icon.Logo />} />
+							<Button icon={<Icon icon="logo" />}>Default With Icon</Button>
+							<Button icon={<Icon icon="logo" />} />
 						</Flex>
 					</div>
 					<div style={{ background: 'black', padding: '2rem 5rem' }}>
 						<Flex alignItems="center">
 							<Button buttonTheme={ButtonTheme.Light}>Light</Button>
-							<Button buttonTheme={ButtonTheme.Light} icon={<Icon.Logo />}>
+							<Button buttonTheme={ButtonTheme.Light} icon={<Icon icon="logo" />}>
 								Light With Icon
 							</Button>
-							<Button buttonTheme={ButtonTheme.Light} icon={<Icon.Logo />} />
+							<Button buttonTheme={ButtonTheme.Light} icon={<Icon icon="logo" />} />
 						</Flex>
 					</div>
 				</StyledBlock>

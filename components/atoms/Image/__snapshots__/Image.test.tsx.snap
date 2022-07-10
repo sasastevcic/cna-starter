@@ -27,6 +27,8 @@ exports[`Image Render should render correctly 1`] = `
     data-nimg="fill"
     data-testid="NextImage"
     decoding="async"
+    onError={[Function]}
+    onLoad={[Function]}
     src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
     style={
       Object {

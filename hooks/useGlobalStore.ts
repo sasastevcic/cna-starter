@@ -7,20 +7,27 @@ type GlobalStore = {
 	decrement: () => void;
 };
 
-export const [GlobalStoreProvider, useGlobalStore] = createStore<GlobalStore>('GlobalStore', () => {
-	const [counter, setCounter] = useState(0);
+type GlobalStoreProps = {
+	initialCount?: number;
+};
 
-	const increment = useCallback(() => {
-		setCounter((prev) => prev + 1);
-	}, []);
+export const [GlobalStoreProvider, useGlobalStore] = createStore<GlobalStore, GlobalStoreProps>(
+	'GlobalStore',
+	({ initialCount }) => {
+		const [counter, setCounter] = useState(initialCount ?? 0);
 
-	const decrement = useCallback(() => {
-		setCounter((prev) => prev - 1);
-	}, []);
+		const increment = useCallback(() => {
+			setCounter((prev) => prev + 1);
+		}, []);
 
-	return {
-		counter,
-		increment,
-		decrement,
-	};
-});
+		const decrement = useCallback(() => {
+			setCounter((prev) => prev - 1);
+		}, []);
+
+		return {
+			counter,
+			increment,
+			decrement,
+		};
+	},
+);

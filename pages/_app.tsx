@@ -11,13 +11,14 @@ import '../styles/font-face.css';
 const GlobalProviders = combineProviders([
 	[ThemeProvider, { theme }],
 	[MotionConfig, { transition: getTransition() }],
-	[GlobalStoreProvider],
 ]);
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
 	<ErrorBoundary>
 		<GlobalProviders>
-			<Component {...pageProps} />
+			<GlobalStoreProvider initialCount={24}>
+				<Component {...pageProps} />
+			</GlobalStoreProvider>
 		</GlobalProviders>
 	</ErrorBoundary>
 );

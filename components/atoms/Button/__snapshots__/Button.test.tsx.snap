@@ -2,7 +2,7 @@
 
 exports[`Button Render should render correctly 1`] = `
 <button
-  className="sc-bczRLJ hPaJzN"
+  className="sc-bcXHqe fPtqUk"
   data-testid="Button"
   onClick={[Function]}
   type="button"

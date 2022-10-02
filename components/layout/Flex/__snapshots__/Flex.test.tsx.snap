@@ -2,7 +2,7 @@
 
 exports[`Flex Render should render correctly 1`] = `
 <div
-  className="sc-bczRLJ bsZsBM"
+  className="sc-bcXHqe kCyEJp"
   data-testid="Flex"
 />
 `;

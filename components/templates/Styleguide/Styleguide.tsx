@@ -51,7 +51,7 @@ export const Styleguide = (): ReactElement => {
 	const { modal, openModal, closeModal } = useModal();
 	const { counter, increment, decrement } = useGlobalStore();
 
-	const handleSubmit = useCallback((data) => {
+	const handleSubmit = useCallback((data: unknown) => {
 		setFormData(JSON.stringify(data));
 	}, []);
 

@@ -2,7 +2,7 @@
 
 exports[`Paragraph Render should render correctly 1`] = `
 <p
-  className="sc-bczRLJ jfbakM"
+  className="sc-bcXHqe LeIJR"
   data-testid="Paragraph"
 />
 `;

@@ -2,7 +2,7 @@
 
 exports[`Container Render should render correctly 1`] = `
 <div
-  className="sc-bczRLJ jywxvd"
+  className="sc-bcXHqe cYNBpI"
   data-testid="Container"
 />
 `;

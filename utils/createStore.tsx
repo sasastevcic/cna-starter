@@ -1,4 +1,4 @@
-import { createContext, FunctionComponent, PropsWithChildren, useContext } from 'react';
+import { createContext, FunctionComponent, PropsWithChildren, ReactNode, useContext } from 'react';
 
 /**
  * Creates a context for the store created by the passed `store`.
@@ -13,7 +13,7 @@ export const createStore = <
 >(
 	name: string,
 	store: (props: TStoreProps) => TStore,
-): [FunctionComponent<TStoreProps>, () => TStore] => {
+): [FunctionComponent<TStoreProps & { children: ReactNode }>, () => TStore] => {
 	const StoreContext = createContext<TStore | null>(null);
 
 	const StoreProvider = ({ children, ...rest }: PropsWithChildren<TStoreProps>): JSX.Element => {

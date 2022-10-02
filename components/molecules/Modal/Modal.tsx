@@ -1,4 +1,4 @@
-import { ReactElement, useRef } from 'react';
+import { ReactElement } from 'react';
 import FocusLock from 'react-focus-lock';
 import { useOutsideClick } from '../../../hooks/useOutsideClick';
 import { useScrollLock } from '../../../hooks/useScrollLock';
@@ -10,13 +10,11 @@ import { ModalProps } from './Modal.data';
 import { StyledCloseButton, StyledModal } from './Modal.styles';
 
 export const Modal = ({ onClose, children, ...props }: ModalProps): ReactElement => {
-	const modalRef = useRef<HTMLDivElement>(null);
-
-	useScrollLock(true);
-
-	useOutsideClick(modalRef, () => {
+	const modalRef = useOutsideClick<HTMLDivElement>(() => {
 		onClose();
 	});
+
+	useScrollLock(true);
 
 	return (
 		<Backdrop>
